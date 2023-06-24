@@ -9,7 +9,7 @@ app.use(express.static('public'));
 app.set('views', path.join(__dirname, '/views'));
 
 app.get('/', (req, res) => {
-  res.render('index', { score: null });
+  res.sendFile(path.join(__dirname, './public/pages/index.html'));
 });
 
 app.post('/submit', (req, res) => {
@@ -27,7 +27,7 @@ app.post('/submit', (req, res) => {
     }
   }
 
-  res.render('index',{score})
+  res.render('result', { score });
 });
 
 app.listen(port, () => {
