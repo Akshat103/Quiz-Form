@@ -9,7 +9,7 @@ app.use(express.static('public'));
 app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', (req, res) => {
-  res.render('form', { score: null });
+  res.render('index', { score: null });
 });
 
 app.post('/submit', (req, res) => {
@@ -27,7 +27,7 @@ app.post('/submit', (req, res) => {
     }
   }
 
-  res.render('form',{score})
+  res.render('index',{score})
 });
 
 app.listen(port, () => {
